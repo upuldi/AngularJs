@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title></title>
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js" ></script>
+
+</head>
+<body ng-init="items=['A','B','C','D']">
+
+	<div>This is how you display a collection of items using ng-repeat using angular js , ng-repeat directive....</div>
+	<div ng-repeat="item in items" ng-hide="hide">
+		{{ item }}
+	</div>
+
+	<p>Adding new items to the list</p>
+	<button ng-click="items.push('Adding a new element ' + items.length)" > Add Me </button>		
+
+	<p>Showing and Hiding Components</p>
+	<button ng-click="hide=!hide" >Show/Hide</button>
+
+</body>
+</html>
