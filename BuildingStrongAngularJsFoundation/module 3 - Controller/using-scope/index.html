@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="MyAppModule">
+<head>
+	<title>Module Demo</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js" ></script>
+</head>
+<body>
+
+
+<div ng-controller="MyControllerWithScope">
+	Some Value Coming From Controller is : {{ someVariable }} <br>
+	Another Value Coming From Controller is : {{ anotherValue }} <br>
+	A Function call from the view to controller scope is : {{ someFunction() }}
+</div>
+
+
+
+<script type="text/javascript" src="app.js" ></script>
+
+</body>
+</html>
