@@ -11,6 +11,7 @@ config(['$routeProvider', function($routeProvider){
 		templateUrl : './common.html'
 	});
 
+	//For each new route you have to define a new controller
 	$routeProvider.when('/specificPage', {
 		controller : 'specificPageCtrl',
 		templateUrl : './common.html'

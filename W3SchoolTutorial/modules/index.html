@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="MyAppModule">
+<head>
+	<title>Module Demo</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js" ></script>
+</head>
+<body>
+
+
+	<div ng-controller='MyController'>
+		{{ firstName + " " + lastName }}
+	</div>
+
+
+	As an attribute: <span my-first-directive></span><br>
+
+	<!-- Also you can use it as follows -->
+	<span>As Element : <my-first-directive></my-first-directive></span>
+
+<script type="text/javascript" src="app.js" ></script>
+
+</body>
+</html>

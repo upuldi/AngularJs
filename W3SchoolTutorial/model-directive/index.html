@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="MyModelDirectiveDemoModule">
+<head>
+	<title>Module Demo</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js" ></script>
+</head>
+<body>
+
+<style>
+	input.ng-invalid {
+	    background-color: orange;
+	}
+	input.ng-empty {
+	    background-color: yellow;
+	}
+	input.ng-valid {
+	    background-color: green;
+	}
+
+</style>
+
+
+
+<div ng-controller= "aControllerForModelBinding" >
+	{{ firstName + " " + lastName }}
+</div>
+
+
+<!-- ng-model directive can be used to validation -->
+<h2>Validations using ng-model directive</h2>
+<form name="SomeInputForm" ng-controller="aControllerForModelBinding" >
+	Name : <input type="text" ng-model="firstName"><br>
+	Email : <input type="email"  ng-model="emailAddress">
+	<span ng-show="SomeInputForm.$error.email"> Not A Valid Email Address.....</span>
+</form>
+
+<br>
+
+<!-- Ng-model can be used to read the status of the model...... -->
+<h2>Status using ng-model directive</h2>
+<form name="myForm" ng-init="myEmailAddress = 'post@myweb.com'">
+	<!-- Looks like it is a good idea to define the name of the input variables -->
+    Email: <input type="email" name="myEmailAddressName" ng-model="myEmailAddress" required>
+    <h1>Status</h1>
+    Valid :  {{myForm.myEmailAddressName.$valid}} <br>
+    Dirty : {{myForm.myEmailAddressName.$dirty}} <br>
+    Touched : {{myForm.myEmailAddressName.$touched}} <br>
+</form>
+
+
+<script type="text/javascript" src="app.js" ></script>
+
+</body>
+</html>

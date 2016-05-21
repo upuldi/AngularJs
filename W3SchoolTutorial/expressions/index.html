@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="">
+<head>
+	<title>Module Demo</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js" ></script>
+</head>
+<body ng-app="" ng-init="variableOne='Variable One Value';anotherVariable='anotherVariableValue'; someObject = {key:'objValueOne',anotherKey:'objValueTwo'} ">
+
+<div>
+	<p>Some angular expression - Numbers, 5 * 5 =  {{ 5 * 5}}</p>
+	<p>Some angular expression - String, "Hello" +  "World" =  {{ "Hello" + "World"}}</p>
+	<p>Some angular expression - With ng-init, variableOne =  {{  variableOne }}</p>
+	<p>Some angular expression - With ng-init, antotherVariable =  {{  anotherVariable }}</p>
+	<p>Some angular expression - With ng-init, Object.key  =  {{  someObject.key }}</p>
+	<p>Some angular expression - With ng-init, Object.anotherKey  =  {{  someObject.anotherKey }}</p>
+</div>
+
+
+<div style="background-color:{{ inputTypeVar }}" ng-init="inputTypeVar='yellow'">
+	<p>Colour : <input type="text" ng-model="inputTypeVar"> </p>
+</div>
+
+
+
+
+
+<script type="text/javascript" src="app.js" ></script>
+
+</body>
+</html>

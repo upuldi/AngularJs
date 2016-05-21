@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Module Demo</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js" ></script>
+</head>
+
+<body ng-app="myModule">
+
+<!-- Binding model value to the view -->
+<div>
+	<p>Name : <input type="text" ng-model="name"></p>
+	<!-- Using Expressions -->
+	<h1>Hello : {{ name }}</h1>
+	<!-- Using ng-bind directive -->
+	 <div><h4>Also With Bind Directive </h4> <div ng-bind="name"></div> </div>
+</div>
+
+<!-- Using a controller -->
+<div ng-controller="myController">
+	<h1>Controller Says : {{ someVariableInScope }}</h1>
+</div>
+
+<!-- Using another controller -->
+<div ng-controller="anotherController">
+	<h1>Another Controller Says : {{ anotherValueToScope }}</h1>
+</div>
+
+<!-- Using ng-init directive -->
+<div ng-init="someVariable='Some Value from in ng-init'"> 
+	<h2>binding a value from ng-init : <span ng-bind="someVariable"></span> </h2> 
+</div>
+
+
+<script type="text/javascript" src="app.js" ></script>
+
+</body>
+</html>
