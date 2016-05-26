@@ -1,0 +1,40 @@
+<div ng-controller="LocalstorageCtrl">
+
+	<div>
+		<h1>Add movies</h1>
+		<form>
+			<label>Title :</label> 
+			<input type="text" placeholder="Enter title here " ng-model="movie.title" ><br>        
+			<label>Rating :</label> 
+			<input type="text" placeholder="Enter Rating here " ng-model="movie.rating" ><br>        
+            <label>Genra:</label>
+			<select ng-model="movie.category" >
+	            <option value=""></option>
+	            <option value="Action">Action</option>
+	            <option value="Horror">Horror</option>
+	            <option value="Thriller">Thriller</option>
+	        </select>
+			<label>Image URI :</label> 
+			<input type="url" placeholder="Url of the image" ng-model="movie.image"> <br>
+			<label>Description :</label> 
+			<textarea  placeholder="Some breif description" ng-model="movie.description" ></textarea> <br>
+			<button ng-click="addMovie()">Save</button>
+		</form>
+	</div>
+
+
+	<div>
+		<h2>Locally Saved Movies</h2>
+		<div ng-repeat="movie in movies" class="movieItem">
+			<h1>{{ movie.title }}</h1> 
+			<h4><span class="rating">Rating {{ movie.rating }}</span> </h4> 
+			<a ng-href ="#/movie/{{ movie.id}}/{{movie.slug}}">
+			  <img class="movieImage" src="{{movie.image}}" />
+		  	</a>
+			<h3 class="movieDescription">{{ movie.description }}</h3> <br><br>
+		</div>
+	</div>
+	
+
+
+</div>

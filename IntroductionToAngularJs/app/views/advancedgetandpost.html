@@ -1,0 +1,16 @@
+<div ng-controller="AdvancedgetandpostCtrl">
+	<h2>Total Github Repos With Angular JS : {{ items.length }}.</h2>
+
+
+	<div ng-repeat=" item in items">
+		<div> <h3>{{ item.name}}</h3></div>
+		<p>Owner : {{item.owner.login}}</p>
+		<p>URL : <a ng-href="{{item.html_url}}">{{item.html_url}}</a></p>
+		<p>{{ item.description }}</p>
+		<br>
+	</div>
+
+
+</div>
+
+

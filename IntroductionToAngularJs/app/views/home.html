@@ -1,0 +1,49 @@
+
+
+
+<div class="row marketing" ng-controller="HomeCtrl">
+
+
+	<div >
+		<img src="./images/up.jpg" width="50" height="50" ng-show="closed" ng-click="closed=false">
+	</div>
+	<div >
+		<img src="./images/down.jpg" width="50" height="50" ng-hide="closed" ng-click="closed=true">
+	</div>
+
+
+	<div ng-controller="AddMovieController" ng-hide="closed">
+		<h1>Add movies</h1>
+		<form>
+			<label>Title :</label> 
+			<input type="text" placeholder="Enter title here " ng-model="movie.title" ng-keyup="validateTitle()"><br>        
+            <label>Genra:</label>
+			<select ng-model="movie.category" ng-change="checkCategorySelected()">
+	            <option value=""></option>
+	            <option value="Action">Action</option>
+	            <option value="Horror">Horror</option>
+	            <option value="Thriller">Thriller</option>
+	        </select>
+			<label>Image URI :</label> 
+			<input type="url" placeholder="Url of the image" ng-model="movie.image"> <br>
+			<label>Description :</label> 
+			<textarea  placeholder="Some breif description" ng-model="movie.description" ng-blur="checkDescription()"></textarea> <br>
+			<button ng-click="addMovie()">Save</button>
+		</form>
+	</div>
+
+	<div >
+		<br>
+		<button ng-click="selectRandomMovie()">Random Movie of The Day</button>
+	</div>
+
+	<div ng-repeat="movie in movies" class="movieItem">
+		<h1>{{ movie.title }}</h1> 
+		<h4><span class="rating">Rating {{ movie.rating }}</span> </h4> 
+		<a ng-href ="#/movie/{{ movie.id}}/{{movie.slug}}">
+		  <img class="movieImage" src="{{movie.image}}" />
+	  	</a>
+		<h3 class="movieDescription">{{ movie.description }}</h3> <br><br>
+	</div>
+
+</div>
