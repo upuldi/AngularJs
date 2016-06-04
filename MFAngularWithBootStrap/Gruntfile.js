@@ -1,4 +1,4 @@
-// Generated on 2016-05-21 using generator-angular 0.15.1
+// Generated on 2016-06-02 using generator-angular 0.15.1
 'use strict';
 
 // # Globbing
@@ -73,7 +73,7 @@ module.exports = function (grunt) {
         port: 9000,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: 'localhost',
-        livereload: 35727
+        livereload: 35723
       },
       livereload: {
         options: {
@@ -338,7 +338,7 @@ module.exports = function (grunt) {
     ngtemplates: {
       dist: {
         options: {
-          module: 'myFirstYomanAngularProjApp',
+          module: 'firstAngularWithBootstrapProjApp',
           htmlmin: '<%= htmlmin.dist.options %>',
           usemin: 'scripts/scripts.js'
         },

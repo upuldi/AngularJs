@@ -1,0 +1,9 @@
+<div>
+  <ul>
+    <li ng-repeat="i in [1]" ng-controller="EventsonscopesCtrl">
+      <button ng-click="$emit('MyEvent')">Emit</button>
+      <button ng-click="$broadcast('MyEvent')">Broadcast</button>
+      <br>
+    </li>
+  </ul>
+</div>

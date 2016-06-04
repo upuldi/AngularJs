@@ -8,7 +8,7 @@
  * Controller of the movieManiaApplication
  */
 angular.module('movieManiaApplication')
-  .controller('HomeCtrl', ['$scope', '$location', '$http', function ($scope, $location,$http) {
+  .controller('HomeCtrl', ['$scope', '$location', '$http', function ($scope,$location,$http) {
 
       /* Get movies information from the stub */
       $http.get('/stubs/movies.json',{}).success(function (data) {

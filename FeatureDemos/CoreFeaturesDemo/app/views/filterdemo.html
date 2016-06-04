@@ -1,0 +1,51 @@
+<div ng-controller="FilterdemoCtrl as fil">
+    <h1>Upper Case Filter : {{ 'upul' | uppercase }}</h1>
+    <h1>Upper Case Filter : {{ 'UPUL' | lowercase }}</h1>
+    <h1>Currency Filter : {{ '2534.56' | currency }}</h1>
+    <div>
+        <br>
+        <br>
+        <div>
+            <h1><b><u>Order by Filter - order by : Age | limit 3</u></b></h1>
+            <div ng-repeat="person in fil.persons | orderBy: 'age'  | limitTo : 3 ">
+                <div>
+                    <h3>Name : {{ person.name }}</h3>
+                    <h3>Age : {{ person.age }}</h3>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h1><b><u>Filter Filter - filter array by : i</u></b></h1>
+            <div ng-repeat="person in fil.persons | filter : 'i' ">
+                <div>
+                    <h3>Name : {{ person.name }}</h3>
+                    <h3>Age : {{ person.age }}</h3>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h1><b><u>Filter By User Inputs</u></b></h1>
+            <lable>Filter Names By :</lable>
+            <input type="text" ng-model="searchVal">
+            <div ng-repeat="person in fil.persons | filter : searchVal ">
+                <div>
+                    <h3>Name : {{ person.name }}</h3>
+                    <h3>Age : {{ person.age }}</h3>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h1><b><u>Custom Filter</u></b></h1>
+            <div ng-repeat="person in fil.persons | limitTo : 3 ">
+                <div>
+                    <h3>Name : {{ person.name | myCustomFilter }}</h3>
+                    <h3>Age : {{ person.age }}</h3>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
