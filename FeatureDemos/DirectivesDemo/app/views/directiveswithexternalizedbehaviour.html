@@ -1,0 +1,12 @@
+<div class="alert alert-success">
+    <h2>This is directive wrapping With Externalized Behaviour</h2>
+    <h3>Message is : {{message}}</h3>
+    <div>
+    	
+    	<!-- Everything inside this directive will be passed with transcluding.. -->
+        <directive-with-ext-behaviour ng-hide="dialogIsHidden" on-click-close="closeDialog(message)">
+        	I have been defined inside the directive definitions. I will be passed to directive..., But my scope is my original (controllers) scope. Name : {{ name }}
+    	</directive-with-ext-behaviour>
+
+    </div>
+</div>
